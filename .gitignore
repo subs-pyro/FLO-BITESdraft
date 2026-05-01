@@ -1,6 +1,8 @@
 wp-admin/
 wp-includes/
-*.log
 wp-config.php
+wp-content/uploads/
+wp-content/cache/
+vendor/
+*.log
 .env
-node_modules/
