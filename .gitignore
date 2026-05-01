@@ -1,8 +1,14 @@
+# Ignore core
 wp-admin/
 wp-includes/
+
+# Ignore config
 wp-config.php
+
+# Ignore only unnecessary parts of wp-content
 wp-content/uploads/
 wp-content/cache/
-vendor/
-*.log
-.env
+wp-content/upgrade/
+
+# DO NOT ignore full wp-content
+# DO NOT use *.php ❌ (this is your mistake)
