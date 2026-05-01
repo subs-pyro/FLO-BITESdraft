@@ -1,14 +1,22 @@
-# Ignore core
+# Ignore WordPress core folders
 wp-admin/
 wp-includes/
+
+# Ignore ALL root PHP files
+*.php
+
+# But keep index.php
+!index.php
 
 # Ignore config
 wp-config.php
 
-# Ignore only unnecessary parts of wp-content
+# Ignore uploads & generated files
 wp-content/uploads/
 wp-content/cache/
 wp-content/upgrade/
 
-# DO NOT ignore full wp-content
-# DO NOT use *.php ❌ (this is your mistake)
+# Ignore local/debug
+local-*.php
+.env
+*.log
