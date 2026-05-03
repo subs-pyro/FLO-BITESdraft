@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 /**
  * Astra functions and definitions
  *
@@ -202,3 +203,60 @@ require_once ASTRA_THEME_DIR . 'inc/core/markup/class-astra-markup.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-filters.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-hooks.php';
 require_once ASTRA_THEME_DIR . 'inc/core/deprecated/deprecated-functions.php';
+=======
+function astra_child_enqueue_styles() {
+    // 1. Load the parent Astra styles
+    wp_enqueue_style( 'astra-parent-style', get_template_directory_uri() . '/style.css' );
+    
+    // 2. Load our new custom styles over the top
+    wp_enqueue_style( 'astra-child-style', get_stylesheet_uri(), array('astra-parent-style'), wp_get_theme()->get('Version') );
+}
+add_action( 'wp_enqueue_scripts', 'astra_child_enqueue_styles', 15 );
+
+function flobites_custom_logo() {
+    return '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">'
+         . '<img src="' . esc_url( get_stylesheet_directory_uri() . '/images/main-logo.png' ) . '" class="custom-logo" alt="' . esc_attr( get_bloginfo( 'name' ) ) . '">'
+         . '</a>';
+}
+add_filter( 'get_custom_logo', 'flobites_custom_logo' );
+
+/* --- PRIMARY NAV: centered links + right-aligned CTA group (Shop + Cart) --- */
+add_filter( 'pre_wp_nav_menu', 'flobites_primary_nav', 10, 2 );
+function flobites_primary_nav( $output, $args ) {
+    if ( ! isset( $args->theme_location ) || $args->theme_location !== 'primary' ) {
+        return $output; // null — lets other menus render normally
+    }
+    
+    // 1. Main Nav Links
+    $links = [
+        [ home_url( '/why-flo' ),      'Why Flo'       ],
+        [ home_url( '/whats-in-flo' ), "What's in Flo" ],
+        [ home_url( '/women-on-flo' ), 'Women on Flo'  ],
+    ];
+    
+    $html = '<ul class="flobites-nav-list">';
+    foreach ( $links as $link ) {
+        $html .= '<li class="menu-item"><a href="' . esc_url( $link[0] ) . '">' . esc_html( $link[1] ) . '</a></li>';
+    }
+    
+    // 2. The Shop Button (Pushed to the right by CSS)
+    $html .= '<li class="menu-item flobites-shop-btn-item">'
+           . '<a href="' . esc_url( home_url( '/shop' ) ) . '" class="flobites-shop-btn">Shop FloBites</a>'
+           . '</li>';
+           
+    // 3. The Custom Cart Icon (Sitting directly next to the Shop button)
+    $cart_url = function_exists( 'wc_get_cart_url' ) ? wc_get_cart_url() : home_url( '/cart/' );
+    $my_cart_image_url = 'http://flobites-local.local/wp-content/uploads/2026/05/cart.png'; 
+    
+    $html .= '<li class="menu-item flobites-custom-menu-cart">'
+           . '<a href="' . esc_url( $cart_url ) . '">'
+           . '<img src="' . esc_url( $my_cart_image_url ) . '" alt="Cart" class="flobites-custom-cart">'
+           . '</a>'
+           . '</li>';
+           
+    $html .= '</ul>';
+    
+    return $html; // non-null short-circuits wp_nav_menu()
+}
+?>
+>>>>>>> b0764e8 (Revamp: Added custom FAQ, Blog, CTA, and new Footer sections)

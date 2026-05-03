@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
 Theme Name: Astra
 Theme URI: https://wpastra.com/
@@ -62,3 +63,1671 @@ Astra local fonts feature is based on Webfonts Loader by WordPress Themes Team (
 Licensed under MIT ( https://github.com/WPTT/webfont-loader/blob/master/LICENSE )
 
 /* Note: The CSS files are loaded from assets/css/ folder. */
+=======
+/*
+Theme Name: Astra Child - FloBites
+Description: Custom Figma Redesign for FloBites
+Author: Pracheth
+Template: astra
+Version: 1.0.0
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Lora:wght@600&family=Manrope:wght@500;600&display=swap");
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* ==============================
+   DESIGN TOKENS
+============================== */
+:root {
+  /* Colors */
+  --flo-bg-hero: #f9dbd0;
+  --flo-bg-dark: #3a1808;
+  --flo-accent: #fa3558; /* This is the bright pink */
+  --flo-accent-border: #e43255;
+  --flo-accent-tint: #fff4f5;
+  --flo-text-dark: #1c1c1c;
+  --flo-text-body: #474747;
+  --flo-btn-text-light: #fde8e7;
+
+  /* Typography */
+  --flo-font-display: "Fredoka One", cursive;
+  --flo-font-serif: "Lora", serif;
+  --flo-font-sans: "Manrope", sans-serif;
+
+  /* Scale */
+  --flo-heading-size: 64px;
+  --flo-heading-lh: 83px;
+  --flo-body-size: 20px;
+  --flo-body-lh: 28px;
+  --flo-btn-size: 20px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ==============================
+   OVERFLOW NUKE (Required for overlap)
+============================== */
+#content,
+#primary,
+.site-main,
+.ast-container,
+.flobites-v2-wrapper {
+  overflow: visible !important;
+}
+
+/* ==============================
+   ISOLATION WRAPPER
+============================== */
+.flobites-v2-wrapper {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+   GLOBAL HEADER (WHITE & FULL WIDTH)
+============================== */
+.site-header,
+#masthead,
+.ast-main-header-wrap,
+.main-header-bar {
+  background-color: #FDFBF5 !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.site-header .custom-logo,
+header .custom-logo {
+  max-width: 140px;
+  height: auto;
+  display: block;
+}
+
+/* Allow every Astra wrapper inside the header bar to expand */
+.main-header-bar-navigation,
+.main-navigation,
+.ast-main-navigation,
+.ast-builder-menu {
+  flex-grow: 1 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Pass-through: the inner list container must not collapse */
+.main-header-menu-list {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* ==============================
+   HERO SECTION
+============================== */
+.flobites-v2-wrapper .hero {
+  position: relative;
+  z-index: 10; /* Set to 10 so it sits BELOW the pink problem section */
+  overflow: visible !important;
+  background-color: var(--flo-bg-hero);
+  min-height: 680px;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: 100px;
+}
+
+/* Left text block */
+.flobites-v2-wrapper .hero__content {
+  position: relative;
+  z-index: 20; /* Keep text high so the wave stays behind it */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 169px 0 550px 58px;
+  max-width: 666px;
+  flex-shrink: 0;
+}
+
+.flobites-v2-wrapper .hero__heading {
+  margin: 0;
+  font-size: var(--flo-heading-size);
+  line-height: var(--flo-heading-lh);
+  color: var(--flo-text-dark);
+  text-transform: none;
+}
+
+.flobites-v2-wrapper .hero__word--fredoka {
+  font-family: var(--flo-font-display);
+  font-weight: 400;
+}
+.flobites-v2-wrapper .hero__word--lora {
+  font-family: var(--flo-font-serif);
+  font-weight: 600;
+}
+.flobites-v2-wrapper .hero__word--accent {
+  color: var(--flo-accent);
+}
+
+.flobites-v2-wrapper .hero__subtext {
+  margin: 0;
+  font-family: var(--flo-font-sans);
+  font-weight: 500;
+  font-size: var(--flo-body-size);
+  line-height: var(--flo-body-lh);
+  color: var(--flo-text-body);
+  max-width: 512px;
+}
+
+.flobites-v2-wrapper .hero__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.flobites-v2-wrapper .hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 177px;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-family: var(--flo-font-sans);
+  font-weight: 600;
+  font-size: var(--flo-btn-size);
+  line-height: 1;
+  text-decoration: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.flobites-v2-wrapper .hero__btn:hover {
+  opacity: 0.88;
+}
+.flobites-v2-wrapper .hero__btn--primary {
+  background-color: var(--flo-accent);
+  color: var(--flo-btn-text-light);
+  border: none;
+}
+.flobites-v2-wrapper .hero__btn--outline {
+  background-color: var(--flo-accent-tint);
+  color: var(--flo-text-dark);
+  border: 1px solid var(--flo-accent-border);
+}
+
+/* ==============================
+   IMAGE & WAVE POSITIONING
+============================== */
+.flobites-v2-wrapper .hero-product-image {
+  position: absolute;
+
+  /* Pulling this way down drops the wave under the buttons and pushes the pouch into the pink section */
+  top: -190px;
+  bottom: auto;
+
+  /* Shifts the image right */
+  right: -15%;
+
+  /* Zooms the image in heavily so the wave touches the left edge */
+  width: 200vw;
+  max-width: 1850px;
+  height: auto;
+
+  z-index: 5; /* Sit behind the text (20) and behind the pink section (30) */
+  pointer-events: none;
+}
+
+/* ==============================
+   PROBLEM SECTION (Pink Cut-Off Layer)
+============================== */
+.flobites-v2-wrapper .problem-section {
+  position: relative;
+
+  /* Crucial: High Z-index forces this section to paint ON TOP of the overflowing pouch */
+  z-index: 30;
+
+  background-color: var(--flo-accent); /* Bright pink */
+  padding: 60px 58px;
+  min-height: 300px;
+}
+
+/* ==============================
+   PRIMARY NAV LIST
+============================== */
+.flobites-nav-list {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 32px !important;
+  width: 100% !important;
+}
+
+.flobites-nav-list .menu-item > a {
+  font-family: var(--flo-font-sans, sans-serif);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--flo-text-dark, #1c1c1c);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.flobites-nav-list .menu-item > a:hover {
+  color: var(--flo-accent, #fa3558);
+}
+
+/* ==============================
+   FAR-RIGHT CTA GROUP
+   margin-left: auto on the shop item absorbs all remaining space,
+   pushing it (and the adjacent cart item) flush to the right edge.
+============================== */
+.flobites-shop-btn-item {
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.flobites-shop-btn {
+  background-color: var(--flo-accent, #fa3558) !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 6px !important;
+  font-family: var(--flo-font-sans, sans-serif) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.flobites-shop-btn:hover {
+  opacity: 0.88;
+}
+
+.flobites-custom-menu-cart {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.flobites-custom-menu-cart img {
+  max-width: 32px !important;
+  height: auto !important;
+  display: block !important;
+}
+
+/* ==============================
+   CLEANUP: HIDE NATIVE ASTRA ELEMENTS
+============================== */
+.ast-site-header-cart-wrap,
+.ast-site-header-cart,
+.ast-woo-header-cart-info-wrap,
+.ast-header-break-point .main-header-menu {
+  display: none !important;
+}
+
+/* ==============================
+   PROBLEM SECTION - 3 COLUMN LAYOUT
+============================== */
+.problem-section-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto; /* Centers the 3 columns inside the pink section */
+  text-align: center;
+}
+
+.problem-card {
+  flex: 1; /* Makes all 3 columns equal width */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.problem-card img {
+  max-width: 180px; /* Keeps the illustrations from getting too huge */
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.problem-heading {
+  font-family: var(--flo-font-display, "Fredoka One", cursive);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+  color: #ffffff !important;
+}
+
+.problem-text {
+  font-family: var(--flo-font-sans, "Manrope", sans-serif);
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0;
+  color: #ffffff !important;
+}
+
+/* ==============================
+   SIMPLE NUTRITION SECTION
+============================== */
+.simple-nutrition-section {
+    background-color: #FDFBF5; /* Matching Nav Bar color */
+    padding: 100px 58px;
+    width: 100%;
+    position: relative;
+    z-index: 20;
+}
+
+.simple-nutrition-container {
+    display: flex;
+    align-items: center; /* Vertically center content against the image */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+}
+
+.nutrition-image-col {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.nutrition-content-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 500px; /* Constrain text width for readability */
+}
+
+.nutrition-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 32px; /* Replicating the distinct rounded corners from the reference */
+    object-fit: cover;
+}
+
+.nutrition-heading {
+    font-family: var(--flo-font-display, "Fredoka One", cursive);
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--flo-text-dark, #1c1c1c);
+    margin: 0;
+    text-transform: none;
+}
+
+.flo-accent-span {
+    color: var(--flo-accent, #fa3558);
+}
+
+.nutrition-paragraph {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--flo-text-body, #474747);
+    margin: 0;
+}
+
+.nutrition-primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--flo-accent, #fa3558);
+    color: #fff !important;
+    padding: 16px 32px;
+    border-radius: 6px;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    margin-bottom: 8px; /* Slight gap before the text link */
+}
+
+.nutrition-primary-btn:hover {
+    opacity: 0.88;
+}
+
+.nutrition-secondary-link {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--flo-text-dark, #1c1c1c);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nutrition-secondary-link:hover {
+    color: var(--flo-accent, #fa3558);
+}
+
+/* ==============================
+   RESPONSIVE (Stack on Mobile)
+============================== */
+@media (max-width: 900px) {
+    .simple-nutrition-container {
+        flex-direction: column; /* Stack vertically */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .nutrition-content-col {
+        align-items: center;
+        max-width: 100%;
+    }
+}
+
+/* ==============================
+   SUPER SEEDS FORMULA SECTION
+============================== */
+.super-seeds-section {
+    background-color: #FDFBF5;
+    padding: 60px 58px 120px 58px;
+    width: 100%;
+    position: relative;
+    z-index: 10; /* Lowered so it sits behind the wrapper */
+}
+
+.super-seeds-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.super-seeds-main-heading {
+    font-family: var(--flo-font-display, "Fredoka One", cursive);
+    font-size: 40px;
+    color: #2c3329;
+    margin: 0 0 60px 0;
+    text-align: left;
+}
+
+.seeds-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    align-items: end;
+}
+
+.seed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.seed-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 80px;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.seed-benefits span {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 13px;
+    color: #555;
+    line-height: 1.3;
+    position: relative;
+    padding-left: 12px;
+}
+
+.seed-benefits span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #aaa;
+}
+
+.seed-img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 24px;
+    align-self: center;
+}
+
+.seed-title {
+    font-family: var(--flo-font-serif, "Lora", serif) !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    color: var(--flo-accent, #fa3558) !important;
+    margin: 0 0 12px 0 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+.seed-desc {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--flo-text-body, #474747);
+    margin: 0;
+}
+
+.seed-desc strong {
+    font-weight: 700;
+    color: var(--flo-text-dark, #1c1c1c);
+}
+
+/* ==============================
+   RESPONSIVE GRID
+============================== */
+@media (max-width: 1024px) {
+    .seeds-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .seeds-grid {
+        grid-template-columns: 1fr;
+    }
+    .super-seeds-main-heading {
+        font-size: 32px;
+        text-align: center;
+    }
+    .seed-card {
+        align-items: center;
+        text-align: center;
+    }
+    .seed-benefits span::before {
+        display: none;
+    }
+    .seed-benefits span {
+        padding-left: 0;
+    }
+}
+
+/* ==============================
+   INGREDIENT PURPOSE SECTION
+============================== */
+.ingredient-purpose-section {
+    background-image: url('http://flobites-local.local/wp-content/uploads/2026/05/background-wrapper-scaled.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Strict width constraints */
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+
+    padding: 120px 20px 140px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 30;
+
+    /* Overlap controls */
+    margin-top: -60px; /* Keeps the top overlap intact */
+    margin-bottom: 0px; /* CRITICAL FIX: Removes the overlap with the footer */
+
+    overflow: hidden; /* Clips the floating seeds so they don't break the layout */
+}
+
+.purpose-header {
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.purpose-title-img {
+    max-width: 400px;
+    height: auto;
+}
+
+.purpose-equation-container {
+    display: flex;
+    flex-direction: row;
+    /* CRITICAL FIX: Allows items to drop to a new line if they run out of space */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 5;
+}
+
+.math-symbol {
+    width: 30px;
+    height: auto;
+}
+
+/* --- Circle Group (Absolute Positioning) --- */
+.circle-group {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.base-circle {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.circle-center-text {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.text-4 { max-width: 40px; }
+.text-super-seeds { max-width: 120px; }
+
+/* Pinning the seeds to the edges */
+.floating-seed {
+    position: absolute;
+    z-index: 10;
+    max-width: 120px;
+}
+
+.seed-top { top: -50px; left: 50%; transform: translateX(-50%); }
+.seed-right { right: -55px; top: 50%; transform: translateY(-50%); }
+.seed-bottom { bottom: -50px; left: 50%; transform: translateX(-50%); }
+.seed-left { left: -50px; top: 50%; transform: translateY(-50%); }
+
+/* --- Ragi Group --- */
+.ragi-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.ragi-title-img { max-width: 120px; }
+.ragi-main-img { max-width: 160px; border-radius: 50%; }
+.small-plus { width: 20px; margin: 10px 0; }
+
+.minerals-row {
+    display: flex;
+    gap: 20px;
+}
+.mineral-img { max-width: 60px; }
+
+/* --- Outcome Group --- */
+.outcome-img {
+    max-width: 400px;
+    height: auto;
+}
+
+/* --- Footer / Button --- */
+.purpose-btn-img {
+    max-width: 220px;
+    height: auto;
+    transition: transform 0.2s;
+}
+.purpose-btn-img:hover {
+    transform: scale(1.05);
+}
+
+/* ==============================
+   RESPONSIVE (Scale Down)
+============================== */
+@media (max-width: 1024px) {
+    .purpose-equation-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    .math-symbol {
+        transform: rotate(90deg);
+    }
+    .small-plus {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .circle-group {
+        transform: scale(0.7);
+    }
+}
+
+/* Ensure footer sits behind the overlapping wrapper */
+.site-footer {
+    position: relative;
+    z-index: 10;
+}
+
+/* ==============================
+   CUSTOM FOOTER
+============================== */
+.site-footer {
+    background-color: #F9DBD0;
+    padding: 60px 40px 30px 40px;
+    border-radius: 40px 40px 0 0;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links li a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-links li a:hover {
+    color: #FA3558;
+}
+
+.footer-main-logo {
+    width: 130px;
+    margin-bottom: 20px;
+}
+
+.footer-tagline {
+    max-width: 250px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.social-placeholder {
+    width: 32px;
+    height: 32px;
+    background-color: #FA3558;
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+.footer-divider {
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    margin: 50px 0 25px 0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 11px;
+    color: #777;
+    letter-spacing: 0.5px;
+}
+
+.footer-the-logo img {
+    width: 45px;
+    height: auto;
+}
+
+.footer-legal a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #777;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+/* --- Nudge the Main Plus Sign --- */
+.main-plus {
+    transform: translate(20px, 0px); /* Adjust these numbers to move it! */
+}
+
+/* --- Nudge the Main Equals Sign --- */
+.main-equals {
+    /*
+       The first number moves it Left/Right (positive = right, negative = left).
+       The second number moves it Up/Down (positive = down, negative = up).
+    */
+    transform: translate(30px, 0px);
+}
+
+/* ==============================
+   CYCLE OF BALANCE SECTION
+============================== */
+.cycle-balance-section {
+    background-color: #FDFBF5;
+    padding: 250px 20px 300px 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+}
+
+.cycle-main-heading {
+    font-family: "Fredoka One", sans-serif !important;
+    font-size: 46px !important;
+    font-weight: 400 !important;
+    color: #1c1c1c !important;
+    margin-bottom: 80px;
+    text-transform: none !important;
+}
+
+.flo-accent-span {
+    color: var(--flo-accent, #FA3558) !important;
+}
+
+/* The wrapper that holds the diagram together */
+.cycle-diagram-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cycle-union-img {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+/* Position the little pink heart on the left edge of the union */
+.cycle-heart-icon {
+    position: absolute;
+    width: 35px;
+    height: auto;
+    left: 11%; /* Positioned on the left curve */
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+/* Standard image block styling */
+.cycle-block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 5;
+}
+
+.cycle-header-img {
+    height: 40px; /* Adjust based on your exported image size */
+    width: auto;
+}
+
+.cycle-text-img {
+    width: 200px; /* Constrains the paragraph text image */
+    height: auto;
+}
+
+/* --- Pinning the blocks around the diagram --- */
+.block-left {
+    left: -130px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.block-right {
+    right: -120px;
+    top: 60%;
+    transform: translateY(-50%);
+}
+
+.block-bottom {
+    bottom: -160px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- Custom Overrides for the Feel Better Block --- */
+.block-right .cycle-header-img {
+    /* Increased from the default 40px */
+    height: 90px; 
+    width: auto;
+}
+
+.block-right .cycle-text-img {
+    /* Increased from the default 150px */
+    width: 190px; 
+    height: auto;
+}
+
+/* ==============================
+   RESPONSIVE (Stack on Mobile)
+============================== */
+@media (max-width: 850px) {
+    .cycle-diagram-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    /* Hide the union image and heart on mobile to prevent squishing */
+    .cycle-union-img, .cycle-heart-icon {
+        display: none;
+    }
+    /* Remove absolute positioning and stack the image blocks */
+    .cycle-block {
+        position: relative;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        transform: none;
+    }
+}
+
+/* ==============================
+   BUY THE COLLECTION SECTION
+============================== */
+.buy-collection-section {
+    /* CRITICAL FIX: Adds the off-white color behind the transparent parts of the wave */
+    background-color: #FDFBF5;
+    background-image: url('http://flobites-local.local/wp-content/uploads/2026/05/wavey-bg-scaled.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    padding: 160px 20px 160px 20px;
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: -40px;
+    position: relative;
+    z-index: 20;
+}
+
+.collection-main-heading {
+    text-align: center;
+    /* Swapped to Fredoka One */
+    font-family: "Fredoka One", sans-serif !important;
+    color: #FFFFFF !important;
+    font-size: 42px !important;
+    margin-bottom: 60px;
+    /* Normal weight for the 'Collection' part */
+    font-weight: 400 !important;
+}
+
+.collection-main-heading .bold-sans {
+    /* Ensures the bold part also uses Fredoka One */
+    font-family: "Fredoka One", sans-serif !important;
+    /* Extra bold weight for 'Buy the' */
+    font-weight: 800 !important;
+}
+
+/* --- Cards Container --- */
+.collection-cards-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Individual Card Styling --- */
+.flo-product-card {
+    background-color: #FDFBF5;
+    border-radius: 30px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+.card-image-container img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* --- Card Text & Layout --- */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    font-family: var(--flo-font-serif, "Lora", serif) !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    color: #333 !important;
+    margin: 0 !important;
+}
+
+.card-price-box {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.pack-size {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 14px;
+    color: #666;
+}
+
+.price-amt {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 24px;
+    font-weight: 800;
+    color: #1c1c1c;
+}
+
+.card-description {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 14px;
+    color: #555;
+    margin: 0 0 20px 0;
+}
+
+.card-bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto; /* Pushes to bottom of card */
+}
+
+.card-bullets {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 13px;
+    color: #444;
+    padding-left: 18px;
+    margin: 0;
+    max-width: 60%; /* Leaves room for the button */
+}
+
+.card-bullets li {
+    margin-bottom: 6px;
+}
+
+.flo-add-cart-btn {
+    background-color: #FFC629;
+    color: #333;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    white-space: nowrap;
+}
+
+.flo-add-cart-btn:hover {
+    background-color: #F4B81A;
+    transform: translateY(-2px);
+}
+
+/* ==============================
+   RESPONSIVE (Stack on Mobile)
+============================== */
+@media (max-width: 900px) {
+    .collection-cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .card-bullets {
+        max-width: 100%;
+    }
+
+    .flo-add-cart-btn {
+        width: 100%;
+    }
+}
+
+/* ==============================
+   BENEFITS IMAGE SECTION
+============================== */
+.benefits-image-section {
+    /* Matches the site's off-white base color */
+    background-color: #FDFBF5;
+    /* Generous padding to space it out from the wavy brown section above */
+    padding: 140px 20px 140px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.benefits-container {
+    width: 100%;
+    /* Constrains the image so it doesn't get ridiculously huge on ultra-wide monitors */
+    max-width: 1400px;
+    display: flex;
+    justify-content: center;
+}
+
+.benefits-full-img {
+    width: 100%;
+    height: auto;
+    /* Ensures the image scales down smoothly without getting stretched or squished */
+    object-fit: contain;
+}
+
+/* ==============================
+   REAL STORIES SECTION
+============================== */
+.stories-section {
+    background-color: #FDFBF5;
+    padding: 80px 20px 120px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.stories-heading {
+    text-align: center;
+    font-family: "Fredoka One", sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 42px !important;
+    color: #1c1c1c !important;
+    margin-bottom: 60px;
+}
+
+/* --- Video Grid --- */
+.video-grid-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1500px;
+    margin: 0 auto 60px auto;
+    flex-wrap: wrap;
+}
+
+.video-placeholder {
+    width: 350px;
+    height: 550px;
+    background-color: #2a3b32;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.play-icon-overlay {
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.play-icon-overlay::after {
+    content: '';
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid rgba(255, 255, 255, 0.9);
+    margin-left: 5px;
+}
+
+.video-placeholder:hover .play-icon-overlay {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* --- Pink Pill Button --- */
+.stories-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flo-primary-btn-pink {
+    display: inline-block;
+    background-color: #FA3558;
+    color: #FFFFFF;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 50px;
+    box-shadow: 0 6px 15px rgba(250, 53, 88, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.flo-primary-btn-pink:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(250, 53, 88, 0.4);
+    color: #FFFFFF;
+}
+
+/* ==============================
+   PLACEHOLDER SECTION
+============================== */
+.placeholder-section {
+    height: 300px;
+    background-color: #f4f4f4;
+    border: 3px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 20px;
+    color: #888;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+}
+
+/* ==============================
+   FAQ SECTION
+============================== */
+.faq-section {
+    background-color: #FA3558; /* Main Pink Background */
+    padding: 250px 10px 200px 20px;
+    position: relative;
+    overflow: hidden; /* Keeps scattered images inside */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- Scattered Background Images --- */
+.faq-bg-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+    pointer-events: none; /* Prevents images from blocking clicks on the FAQs */
+}
+
+.faq-bg-img {
+    position: absolute;
+    width: 180px; /* Adjust size of floating characters here */
+    height: auto;
+    opacity: 0.9;
+}
+
+/* Hardcoded 'random' positions and rotations */
+.img-1 { top: 15%; left: 17%; transform: rotate(0deg); }
+.img-2 { bottom: 5%; right: 35%; transform: rotate(10deg) scaleX(-1); }
+.img-3 { top: 8%; right: 40%; transform: rotate(-20deg); }
+.img-4 { bottom: 20%; left: 73%; transform: rotate(-10deg) scaleX(-1); }
+.img-5 { top: 8%; right: 10%; transform: rotate(-5deg); }
+.img-6 { bottom: 30%; left: 25%; transform: rotate(-15deg); }
+.img-7 { top: 40%; left: 60%; transform: rotate(-25deg); width: 130px; }
+.img-8 { bottom: 5%; right: 73%; transform: rotate(5deg) scaleX(-1); width: 130px;}
+
+/* --- FAQ Content Wrapper --- */
+.faq-content-wrapper {
+    position: relative;
+    z-index: 10; /* Keeps text above the scattered images */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-heading {
+    text-align: center;
+    font-family: "Fredoka One", sans-serif !important;
+    color: #FFFFFF !important;
+    font-size: 42px !important;
+    font-weight: 400 !important;
+    margin-bottom: 50px;
+}
+
+/* --- Native HTML Accordion Styling --- */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Alternate the colors of the boxes just like the design */
+.faq-item:nth-child(even) {
+    background-color: #F8D9D2; /* Light Peach/Pink */
+}
+
+/* Hide default HTML triangle marker */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary {
+    padding: 20px 30px;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    list-style: none; /* Hides default marker in Firefox/Edge */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.2s;
+}
+
+.faq-item summary:hover {
+    opacity: 0.8;
+}
+
+.faq-arrow {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+/* Flip the arrow when the dropdown is opened */
+.faq-item[open] summary .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 30px 20px 30px;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Hide floating images on mobile so they don't crowd the text */
+@media (max-width: 768px) {
+    .faq-bg-img {
+        display: none;
+    }
+}
+
+/* ==============================
+   MORE ABOUT FLO SECTION
+============================== */
+.more-about-section {
+    background-color: #FDFBF5;
+    padding: 80px 20px 100px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.more-about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Header Row --- */
+.more-about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
+.more-about-title {
+    font-family: "Fredoka One", sans-serif !important;
+    font-size: 38px !important;
+    color: #1c1c1c !important;
+    margin: 0;
+    font-weight: 400;
+}
+
+.view-all-link {
+    font-family: var(--flo-font-serif, "Lora", serif);
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #555;
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.view-all-link:hover {
+    color: #FA3558;
+    border-bottom-color: #FA3558;
+}
+
+/* --- Peach Banner Box --- */
+.blog-banner-box {
+    background-color: #F9DBD0;
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.blog-banner-content {
+    flex: 1;
+    max-width: 550px;
+}
+
+.blog-banner-text {
+    font-family: var(--flo-font-serif, "Lora", serif) !important;
+    font-size: 28px !important;
+    font-weight: 400 !important;
+    color: #333 !important;
+    line-height: 1.5;
+    margin: 0 0 40px 0;
+}
+
+.blog-read-btn {
+    display: inline-block;
+    background-color: #FA3558;
+    color: #FFFFFF;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 14px 40px;
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.blog-read-btn:hover {
+    background-color: #E02E4E;
+    transform: translateY(-2px);
+    color: #FFFFFF;
+}
+
+.blog-banner-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.blog-banner-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* ==============================
+   RESPONSIVE (Stack on Mobile)
+============================== */
+@media (max-width: 850px) {
+    .more-about-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .blog-banner-box {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .blog-banner-image {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* ==============================
+   FINAL CTA BANNER SECTION
+============================== */
+.cta-banner-section {
+    background-color: #E2B4C5;
+    /* background-image: url('YOUR_IMAGE_LINK_HERE'); */
+    /* background-size: cover; */
+    /* background-position: center; */
+    padding: 120px 20px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cta-banner-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta-heading {
+    font-family: "Fredoka One", sans-serif !important;
+    font-size: 54px !important;
+    font-weight: 400 !important;
+    color: #FFFFFF !important;
+    line-height: 1.2;
+    margin: 0 0 25px 0;
+}
+
+.cta-subheading {
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 18px;
+    font-weight: 500;
+    color: #333333;
+    margin: 0 0 40px 0;
+}
+
+.cta-buy-btn {
+    display: inline-block;
+    background-color: #CE4972;
+    color: #FFFFFF;
+    font-family: var(--flo-font-sans, "Manrope", sans-serif);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    padding: 16px 50px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(206, 73, 114, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-buy-btn:hover {
+    background-color: #B53E61;
+    transform: translateY(-2px);
+    color: #FFFFFF;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+    .cta-heading {
+        font-size: 38px !important;
+    }
+    .cta-subheading {
+        font-size: 16px;
+    }
+    .cta-banner-section {
+        padding: 80px 20px;
+    }
+}
+>>>>>>> b0764e8 (Revamp: Added custom FAQ, Blog, CTA, and new Footer sections)
