@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-/**
+/** <<<<<<< HEAD >>>>>>>
 Theme Name: Astra
 Theme URI: https://wpastra.com/
 Author: Brainstorm Force
@@ -63,7 +62,6 @@ Astra local fonts feature is based on Webfonts Loader by WordPress Themes Team (
 Licensed under MIT ( https://github.com/WPTT/webfont-loader/blob/master/LICENSE )
 
 /* Note: The CSS files are loaded from assets/css/ folder. */
-=======
 /*
 Theme Name: Astra Child - FloBites
 Description: Custom Figma Redesign for FloBites
@@ -1729,5 +1727,4 @@ header .custom-logo {
     .cta-banner-section {
         padding: 80px 20px;
     }
-}
->>>>>>> b0764e8 (Revamp: Added custom FAQ, Blog, CTA, and new Footer sections)
+} 
